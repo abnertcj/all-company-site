@@ -36,4 +36,16 @@ python -m http.server 8000
 
 ## Publicação (GitHub Pages)
 
-O site é servido pelo GitHub Pages a partir da branch `main` (pasta raiz). Qualquer push para `main` atualiza o site automaticamente em alguns minutos.
+O site é servido pelo GitHub Pages a partir da branch `gh-pages` (pasta raiz). A branch `main` é a de desenvolvimento.
+
+Para publicar uma alteração:
+
+```bash
+git checkout main
+# ... edite, faça commit ...
+git checkout gh-pages
+git merge main
+git push origin main gh-pages
+```
+
+O site é atualizado em alguns minutos após o push na `gh-pages`.
